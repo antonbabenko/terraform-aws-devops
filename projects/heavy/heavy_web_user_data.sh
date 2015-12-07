@@ -4,9 +4,11 @@ cat <<EOF_SSH > /home/ubuntu/.ssh/authorized_keys
 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0sUjdTEcOWYgQ7ESnHsSkvPUO2tEvZxxQHUZYh9j6BPZgfn13iYhfAP2cfZznzrV+2VMamMtfiAiWR39LKo/bMN932HOp2Qx2la14IbiZ91666FD+yZ4+vhR2IVhZMe4D+g8FmhCfw1+zZhgl8vQBgsRZIcYqpYux59FcPv0lP1EhYahoRsUt1SEU2Gj+jvgyZpe15lnWk2VzfIpIsZ++AeUqyHoJHV0RVOK4MLRssqGHye6XkA3A+dMm2Mjgi8hxoL5uuwtkIsAll0kSfL5O2G26nsxm/Fpcl+SKSO4gs01d9V83xiOwviyOxmoXzwKy4qaUGtgq1hWncDNIVG/aQ==
 EOF_SSH
 
-#apt-get update -y
-#apt-get upgrade -y
-apt-get install -y nginx stress
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+apt-get update -y
+apt-get install -y nginx stress awscli
 
 #stress --cpu 1
 
