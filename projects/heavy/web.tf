@@ -58,6 +58,7 @@ resource "aws_launch_configuration" "heavy" {
   image_id        = "${module.ubuntu_ami.ami_id}"
   instance_type   = "${var.web_instance_type}"
   security_groups = ["${aws_security_group.web_server.id}"]
+  iam_instance_profile = "${aws_iam_instance_profile.default.name}"
   user_data       = "${template_file.heavy_user_data.rendered}"
 
   lifecycle {

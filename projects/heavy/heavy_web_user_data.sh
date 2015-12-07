@@ -9,7 +9,6 @@ EOF_SSH
 apt-get install -y nginx stress
 
 #stress --cpu 1
-while true; do ps -A -o pcpu | tail -n+2 | paste -sd+ | bc > /usr/share/nginx/html/cpu.txt; sleep 1; done
 
 cat <<EOF_HTML > /usr/share/nginx/html/index.html
 <html>
@@ -34,6 +33,7 @@ cat <<EOF_HTML > /usr/share/nginx/html/index.html
   <body>
     <div id="chart_div"></div>
 
+    <!-- draw gauge like here - https://jsfiddle.net/api/post/library/pure/ -->
     <script type="text/javascript">
     $(document).ready(function() {
         var timeout = setInterval(reloadCpu, 1000);
@@ -47,3 +47,18 @@ cat <<EOF_HTML > /usr/share/nginx/html/index.html
   </body>
 </html>
 EOF_HTML
+
+
+
+# Get cloudwatch statistics for asg where this instance belongs:
+#while true; do
+#aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time 2015-12-07T20:18:00 --end-time 2015-12-07T20:48:00 --period 3600 --namespace AWS/EC2 --statistics Average --dimensions Name=InstanceId,Value=i-c1c0aa4a
+INSTANCE_ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
+START=$(date --date="-1 hour" +%Y-%m-%dT%T)
+END=$(date +%Y-%m-%dT%T)
+DATA=$(aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time $START --end-time $END --period 60 --namespace AWS/EC2 --statistics Average --dimensions Name=InstanceId,Value=$INSTANCE_ID)
+echo $DATA > /usr/share/nginx/html/cpu.txt
+#sleep 60
+#done
+
+#while true; do ps -A -o pcpu | tail -n+2 | paste -sd+ | bc > /usr/share/nginx/html/cpu.txt; sleep 1; done
