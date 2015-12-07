@@ -1,0 +1,2 @@
+# public keys are allowed in this directory
+!*.pub
