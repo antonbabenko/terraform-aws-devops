@@ -53,6 +53,7 @@ EOF_HTML
 
 
 # Get cloudwatch statistics for asg where this instance belongs:
+# AutoScalingGroupName - http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/ec2-metricscollected.html
 #while true; do
 #aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time 2015-12-07T20:18:00 --end-time 2015-12-07T20:48:00 --period 3600 --namespace AWS/EC2 --statistics Average --dimensions Name=InstanceId,Value=i-c1c0aa4a
 INSTANCE_ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
