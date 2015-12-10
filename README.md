@@ -1,7 +1,8 @@
 # Manage AWS infrastructure as code using Terraform
 
 ## Presentation
-You can find slides inside `presentation` folder.
+
+Slides are inside `presentation` folder. Code in this repository and talk was given by Anton Babenko for DevOps Norway Meetup 14th of December 2015.
 
 ## Setup
 
@@ -16,33 +17,16 @@ Get AWS IAM access and secret keys from AWS console and export them like this:
 	export TF_VAR_aws_access_key=$AWS_ACCESS_KEY_ID
 	export TF_VAR_aws_secret_key=$AWS_SECRET_ACCESS_KEY
 		   
-## Goal
+## Description
 
-Let's deploy demo application and keep AWS infrastructure as code using Terraform.
+Let's deploy demo application and work with AWS infrastructure as code using Terraform.
 
-Start:
-======
-Small team:
-  - Terraform remote state configured using S3
+Terraform remote state is configured using S3.
+
 2 projects:
-  - web (ELB,ASG,LC...; CODEDEPLOY APP;IAM USERS)
-  - shared-aws (VPC, SN, IAM USERS)
+  - web (ELB,ASG,LC)
+  - shared-aws (VPC,SN)
 1 environment:
-  - production
-1 region:
-  - eu-west-1
-
-Final goal:
-===========
-Large team:
-  - Terraform remote state configured using S3
-  - Separate web-developers and infrastructure team
-3 projects:
-  - web (ELB, ASG, LC, DYNAMODB, CODEDEPLOY)
-  - shared-aws (VPC, SN)
-  - global-aws (CODEDEPLOY APP, IAM USERS, ROUTE53 ZONE, AWS ACCOUNTS)
-2 environments:
-  - development
   - production
 1 region:
   - eu-west-1
