@@ -2,10 +2,12 @@
 # VPC
 ######
 module "vpc" {
-  source = "github.com/comoyo/terraform-modules//aws/network/vpc?ref=master"
+  source               = "github.com/terraform-community-modules/tf_aws_vpc_only"
 
-  name   = "${var.environment}"
-  cidr   = "${var.vpc_cidr}"
+  name                 = "${var.environment}"
+  cidr                 = "${var.vpc_cidr}"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
 }
 
 
@@ -13,7 +15,7 @@ module "vpc" {
 # Internet gateway
 ###################
 module "igw" {
-  source = "github.com/comoyo/terraform-modules//aws/network/igw?ref=master"
+  source = "github.com/terraform-community-modules/tf_aws_igw"
 
   name   = "${var.environment}"
   vpc_id = "${module.vpc.vpc_id}"
@@ -24,7 +26,7 @@ module "igw" {
 # Public subnets
 #################
 module "public_subnet" {
-  source = "github.com/comoyo/terraform-modules//aws/network/public_subnet?ref=master"
+  source = "github.com/terraform-community-modules/tf_aws_public_subnet"
 
   name   = "${var.environment}-public"
   cidrs  = "${var.public_subnets}"
