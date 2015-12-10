@@ -2,7 +2,7 @@
 # VPC
 ######
 module "vpc" {
-  source               = "github.com/terraform-community-modules/tf_aws_vpc_only"
+  source               = "github.com/terraform-community-modules/tf_aws_vpc_only?ref=v1.0.0"
 
   name                 = "${var.environment}"
   cidr                 = "${var.vpc_cidr}"

@@ -57,6 +57,7 @@ case "$action" in
   apply) ;;
   show) ;;
   output) ;;
+  graph) ;;
   taint) ;;
   plan-destroy) ;;
   destroy) ;;
@@ -154,10 +155,10 @@ if [ "$action" == "plan" ]; then
   if [ $EXIT_CODE == 0 ]; then
     exit 0
   elif [ $EXIT_CODE == 2 ]; then
-    echo "There are changes, so we should apply this changes to ${TF_VAR_environment}!!!"
+    echo "Nice! There are changes which can be applied on ${TF_VAR_environment}"
     exit 0
   else
-    echo "ERRRRRRROR during plan"
+    echo "Omg! There was an error during plan"
     exit 1
   fi
 fi
@@ -187,7 +188,12 @@ if [ "$action" == "output" ]; then
   exit 0
 fi
 
-#terraform graph -draw-cycles | dot -Tpng -o graph.png
+if [ "$action" == "graph" ]; then
+  terraform graph -draw-cycles | dot -Tpng -o graph.png
+  open graph.png
+
+  exit 0
+fi
 
 # Execute the terraform action (apply, destroy, refresh)
 terraform "$action" \

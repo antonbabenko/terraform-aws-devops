@@ -47,19 +47,15 @@ resource "template_file" "heavy_user_data" {
   lifecycle {
     create_before_destroy = true
   }
-//  vars {
-//    s3_bucket_name = "${var.s3_bucket_name}"
-//    ssh_user       = "${var.ssh_user}"
-//  }
 }
 
 resource "aws_launch_configuration" "heavy" {
-  name_prefix     = "heavy_"
-  image_id        = "${module.ubuntu_ami.ami_id}"
-  instance_type   = "${var.web_instance_type}"
-  security_groups = ["${aws_security_group.web_server.id}"]
+  name_prefix          = "heavy_"
+  image_id             = "${module.ubuntu_ami.ami_id}"
+  instance_type        = "${var.web_instance_type}"
+  security_groups      = ["${aws_security_group.web_server.id}"]
   iam_instance_profile = "${aws_iam_instance_profile.default.name}"
-  user_data       = "${template_file.heavy_user_data.rendered}"
+  user_data            = "${template_file.heavy_user_data.rendered}"
 
   lifecycle {
     create_before_destroy = true
@@ -77,11 +73,11 @@ resource "aws_autoscaling_group" "heavy" {
   min_elb_capacity          = 0 # 0 skips waiting for instances attached to the load balancer
   wait_for_capacity_timeout = "0m" # 0 disables wait for ASG capacity
   launch_configuration      = "${aws_launch_configuration.heavy.name}"
-  load_balancers            = ["heavy"]
+  load_balancers            = ["${aws_elb.heavy.name}"]
 
   tag {
-    key = "Name"
-    value = "heavy-web"
+    key                 = "Name"
+    value               = "heavy-web"
     propagate_at_launch = true
   }
 
@@ -102,26 +98,29 @@ resource "aws_security_group" "elb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-//  ingress {
-//    protocol    = "tcp"
-//    from_port   = 443
-//    to_port     = 443
-//    cidr_blocks = ["0.0.0.0/0"]
-//  }
+    ingress {
+      protocol    = "tcp"
+      from_port   = 443
+      to_port     = 443
+      cidr_blocks = ["0.0.0.0/0"]
+    }
 
   egress {
     protocol    = -1
     from_port   = 0
     to_port     = 0
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [
+      "0.0.0.0/0"]
   }
 }
 
 
 resource "aws_elb" "heavy" {
-  name                        = "heavy"
-  subnets                     = ["${split(",", terraform_remote_state.shared.output.public_subnet_ids)}"]
-  security_groups             = ["${aws_security_group.elb.id}"]
+  name                      = "heavy"
+  subnets                   = ["${split(",", terraform_remote_state.shared.output.public_subnet_ids)}"]
+  security_groups           = ["${aws_security_group.elb.id}"]
+  cross_zone_load_balancing = true
+  idle_timeout              = 60
 
   listener {
     instance_port     = 80
@@ -130,15 +129,13 @@ resource "aws_elb" "heavy" {
     lb_protocol       = "http"
   }
 
-  /* TODO: enable me again with certficiate
-    listener {
-      instance_port = 8080
-      instance_protocol = "http"
-      lb_port = 443
-      lb_protocol = "https"
-      ssl_certificate_id = "arn:aws:iam::123456789012:server-certificate/certName"
-    }
-  */
+  listener {
+    instance_port      = 80
+    instance_protocol  = "http"
+    lb_port            = 443
+    lb_protocol        = "https"
+    ssl_certificate_id = "${terraform_remote_state.shared.output.iam_server_certificate_arn}"
+  }
 
   health_check {
     healthy_threshold   = 2
@@ -148,8 +145,49 @@ resource "aws_elb" "heavy" {
     target              = "HTTP:80/"
   }
 
-  cross_zone_load_balancing   = true
-  idle_timeout                = 60
-//  connection_draining         = true
-//  connection_draining_timeout = 10
+//  # Taint ELB: terraform taint -state=projects/heavy/.terraform/terraform.tfstate aws_elb.heavy
+//  # Taint ASG: terraform taint -state=projects/heavy/.terraform/terraform.tfstate aws_autoscaling_group.heavy
+//  provisioner "local-exec" {
+//    command = <<EOF
+//      POLICY_NAME=SuperSecurePolicy
+//
+//      aws elb create-load-balancer-policy\
+//      --load-balancer-name ${aws_elb.heavy.name}\
+//      --policy-name $POLICY_NAME\
+//      --policy-type-name SSLNegotiationPolicyType\
+//      --policy-attributes \
+// AttributeName=Protocol-TLSv1,AttributeValue=true\
+// AttributeName=Protocol-TLSv1.1,AttributeValue=true\
+// AttributeName=Protocol-TLSv1.2,AttributeValue=true\
+// AttributeName=Server-Defined-Cipher-Order,AttributeValue=true\
+// AttributeName=ECDHE-ECDSA-AES128-GCM-SHA256,AttributeValue=true\
+// AttributeName=ECDHE-RSA-AES128-GCM-SHA256,AttributeValue=true\
+// AttributeName=ECDHE-ECDSA-AES128-SHA256,AttributeValue=true\
+// AttributeName=ECDHE-RSA-AES128-SHA256,AttributeValue=true\
+// AttributeName=ECDHE-ECDSA-AES128-SHA,AttributeValue=true\
+// AttributeName=ECDHE-RSA-AES128-SHA,AttributeValue=true\
+// AttributeName=DHE-RSA-AES128-SHA,AttributeValue=true\
+// AttributeName=ECDHE-ECDSA-AES256-GCM-SHA384,AttributeValue=true\
+// AttributeName=ECDHE-RSA-AES256-GCM-SHA384,AttributeValue=true\
+// AttributeName=ECDHE-ECDSA-AES256-SHA384,AttributeValue=true\
+// AttributeName=ECDHE-RSA-AES256-SHA384,AttributeValue=true\
+// AttributeName=ECDHE-RSA-AES256-SHA,AttributeValue=true\
+// AttributeName=ECDHE-ECDSA-AES256-SHA,AttributeValue=true\
+// AttributeName=AES128-GCM-SHA256,AttributeValue=true\
+// AttributeName=AES128-SHA256,AttributeValue=true\
+// AttributeName=AES128-SHA,AttributeValue=true\
+// AttributeName=AES256-GCM-SHA384,AttributeValue=true\
+// AttributeName=AES256-SHA256,AttributeValue=true\
+// AttributeName=AES256-SHA,AttributeValue=true\
+// AttributeName=DHE-DSS-AES128-SHA,AttributeValue=true\
+// AttributeName=DES-CBC3-SHA,AttributeValue=true
+//
+//      aws elb set-load-balancer-policies-of-listener\
+//      --load-balancer-name ${aws_elb.heavy.name}\
+//      --load-balancer-port 443\
+//      --policy-names $POLICY_NAME
+//
+//EOF
+//  }
+
 }
