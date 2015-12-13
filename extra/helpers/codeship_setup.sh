@@ -53,6 +53,7 @@ github.com:
   oauth_token: ${github_oauth_token}
 EOF
 
+cat ~/.config/hub
 
 which terraform
 which hub
