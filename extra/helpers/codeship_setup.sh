@@ -45,7 +45,7 @@ else
 fi
 
 mkdir -p ~/.config
-cat <<"EOF" > ~/.config/hub
+cat <<EOF > ~/.config/hub
 ---
 github.com:
 - protocol: https
