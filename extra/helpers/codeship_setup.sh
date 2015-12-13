@@ -30,7 +30,7 @@ fi
 mkdir -p ~/cache/hub
 cd ~/cache/hub
 
-if [ ! -f "hub_${HUB_VERSION}" ]; then
+if [ ! -f "hub_${HUB_VERSION}.tgz" ]; then
 
   echo "Downloading hub"
   curl --silent -o hub_${HUB_VERSION}.tgz --location -w "Downloaded: %{size_download} bytes (HTTP Code: %{http_code})\n" $HUB_TGZ
