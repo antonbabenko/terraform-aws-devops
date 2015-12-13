@@ -26,21 +26,23 @@ else
   echo "terraform_${TERRAFORM_VERSION}.zip is already extracted"
 fi
 
-if [ ! -f "hub_${HUB_VERSION}.tgz" ]; then
+if [ ! -f "hub_${HUB_VERSION}" ]; then
 
   echo "Downloading hub"
   curl --silent -o hub_${HUB_VERSION}.tgz --location -w "Downloaded: %{size_download} bytes (HTTP Code: %{http_code})\n" $HUB_TGZ
 
   echo "Extracting hub"
-  mkdir hub
-  tar zxvf hub_${HUB_VERSION}.tgz -C hub --strip-components=1 > /dev/null
+  mkdir hub_${HUB_VERSION}
+  tar zxvf hub_${HUB_VERSION}.tgz -C hub_${HUB_VERSION} --strip-components=1 > /dev/null
 
-  cp -R hub/bin/hub ~/bin/
+  cp -R hub_${HUB_VERSION}/bin/hub ~/bin/
 else
   echo "hub version ${HUB_VERSION} is already extracted"
 fi
 
 which terraform
+which hub
+
 terraform version
 hub version
 aws --version
