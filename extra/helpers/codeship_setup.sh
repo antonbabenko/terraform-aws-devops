@@ -26,6 +26,10 @@ else
   echo "terraform_${TERRAFORM_VERSION}.zip is already extracted"
 fi
 
+# Install github
+mkdir -p ~/cache/hub
+cd ~/cache/hub
+
 if [ ! -f "hub_${HUB_VERSION}" ]; then
 
   echo "Downloading hub"
