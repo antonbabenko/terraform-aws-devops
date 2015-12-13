@@ -36,7 +36,7 @@ if ! builtin type -p hub &>/dev/null; then
   curl --silent -o hub_${HUB_VERSION}.tgz --location -w "Downloaded: %{size_download} bytes (HTTP Code: %{http_code})\n" $HUB_TGZ
 
   echo "Extracting hub"
-  mkdir hub_${HUB_VERSION}
+  mkdir -p hub_${HUB_VERSION}
   tar zxvf hub_${HUB_VERSION}.tgz -C hub_${HUB_VERSION} --strip-components=1 > /dev/null
 
   cp -R hub_${HUB_VERSION}/bin/hub ~/bin/
