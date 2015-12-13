@@ -44,6 +44,7 @@ else
   echo "hub version ${HUB_VERSION} is already extracted"
 fi
 
+mkdir -p ~/.config
 cat <<"EOF" > ~/.config/hub
 ---
 github.com:
