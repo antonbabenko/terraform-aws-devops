@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 # Install deps
 pip install --upgrade awscli
@@ -43,6 +43,15 @@ if ! builtin type -p hub &>/dev/null; then
 else
   echo "hub version ${HUB_VERSION} is already extracted"
 fi
+
+cat <<"EOF" > ~/.config/hub
+---
+github.com:
+- protocol: https
+  user: antonbabenko
+  oauth_token: ${github_oauth_token}
+EOF
+
 
 which terraform
 which hub
