@@ -1,5 +1,10 @@
 # Manage AWS infrastructure as code using Terraform
 
+## [Join AWS User Group Norway meetups!](http://www.meetup.com/AWS-User-Group-Norway/)
+This is a group for people interested in Amazon Web Services. Anyone can participate, ranging from AWS evangelists to the curious. The main focus of the group is to build up a community around AWS with socializing and talks on topics like innovations, development and possibilities. Having trouble with a stack? Maybe you'll meet someone with a solution or an approach that you haven't already tried.
+
+[Join now!](http://www.meetup.com/AWS-User-Group-Norway/)
+
 ## Presentation
 
 Slides are inside `presentation` folder. Code in this repository and talk was given by Anton Babenko for DevOps Norway Meetup 14th of December 2015.
