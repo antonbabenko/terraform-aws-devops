@@ -147,7 +147,7 @@ resource "aws_elb" "heavy" {
   health_check {
     healthy_threshold   = 2
     unhealthy_threshold = 2
-    interval            = 15
+    interval            = 7
     timeout             = 5
     target              = "HTTP:80/"
   }
