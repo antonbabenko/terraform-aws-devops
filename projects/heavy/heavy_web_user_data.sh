@@ -12,56 +12,32 @@ apt-get install -y nginx stress awscli
 
 #stress --cpu 1
 
-cat <<EOF_HTML > /usr/share/nginx/html/index.html
+cat <<"EOF_HTML" > /usr/share/nginx/html/index.html
 <html>
   <head>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript">
-    google.load('visualization', '1', {'packages':['corechart']});
-    google.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var jsonData = $.ajax({
-          url: "https://gist.githubusercontent.com/antonbabenko/526783bbb4a5011f8b50/raw/data.json",
-          dataType: "json",
-          async: false
-          }).responseText;
-      var data = new google.visualization.DataTable(jsonData);
-      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-      chart.draw(data, {width: 600, height: 400});
-    }
-    </script>
   </head>
   <body>
-    <div id="chart_div"></div>
-
-    <!-- draw gauge like here - https://jsfiddle.net/api/post/library/pure/ -->
     <script type="text/javascript">
     $(document).ready(function() {
-        var timeout = setInterval(reloadCpu, 1000);
+        var timeout = setInterval(reloadCpu, 3000);
         function reloadCpu () {
             $("#cpuTxt").load("cpu.txt");
+            //$("#ipTxt").load("ip.txt");
+            //$("#idTxt").load("id.txt");
         }
     });
     </script>
-    CPU usage: <div id="cpuTxt"></div>
-
+    CPU usage: <div id="cpuTxt"></div><br /><br /><br />
+    <!--
+    Private IP: <div id="ipTxt"></div><br /><br /><br />
+    Instance ID: <div id="idTxt"></div>
+    -->
   </body>
 </html>
 EOF_HTML
 
+curl -o /usr/share/nginx/html/id.txt http://169.254.169.254/latest/meta-data/instance-id
+curl -o /usr/share/nginx/html/ip.txt http://169.254.169.254/latest/meta-data/local-ipv4
 
-
-# Get cloudwatch statistics for asg where this instance belongs:
-# AutoScalingGroupName - http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/ec2-metricscollected.html
-#while true; do
-#aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time 2015-12-07T20:18:00 --end-time 2015-12-07T20:48:00 --period 3600 --namespace AWS/EC2 --statistics Average --dimensions Name=InstanceId,Value=i-c1c0aa4a
-INSTANCE_ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
-START=$(date --date="-1 hour" +%Y-%m-%dT%T)
-END=$(date +%Y-%m-%dT%T)
-DATA=$(aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time $START --end-time $END --period 60 --namespace AWS/EC2 --statistics Average --dimensions Name=InstanceId,Value=$INSTANCE_ID)
-echo $DATA > /usr/share/nginx/html/cpu.txt
-#sleep 60
-#done
-
-#while true; do ps -A -o pcpu | tail -n+2 | paste -sd+ | bc > /usr/share/nginx/html/cpu.txt; sleep 1; done
+while true; do ps -A -o pcpu | tail -n+2 | paste -sd+ | bc > /usr/share/nginx/html/cpu.txt; sleep 1; done
