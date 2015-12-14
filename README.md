@@ -7,7 +7,9 @@ This is a group for people interested in Amazon Web Services. Anyone can partici
 
 ## Presentation
 
-Slides are inside `presentation` folder. Code in this repository and talk was given by Anton Babenko for DevOps Norway Meetup 14th of December 2015.
+Talk was given by Anton Babenko on DevOps Norway Meetup 14th of December 2015.
+
+[Slides from the talk](http://www.slideshare.net/AntonBabenko/manage-aws-infrastructure-using-terraform-56140321)
 
 ## Setup
 
