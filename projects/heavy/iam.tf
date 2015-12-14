@@ -25,6 +25,10 @@ resource "aws_iam_role" "default" {
   ]
 }
 EOF
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_iam_role_policy" "default" {
@@ -47,4 +51,8 @@ resource "aws_iam_role_policy" "default" {
     ]
 }
 EOF
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
