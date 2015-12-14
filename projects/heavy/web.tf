@@ -39,6 +39,10 @@ resource "aws_security_group" "web_server" {
     to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "template_file" "heavy_user_data" {
@@ -111,6 +115,10 @@ resource "aws_security_group" "elb" {
     to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 
@@ -142,6 +150,10 @@ resource "aws_elb" "heavy" {
     interval            = 15
     timeout             = 5
     target              = "HTTP:80/"
+  }
+
+  lifecycle {
+    create_before_destroy = true
   }
 
 //  # Taint ELB: terraform taint -state=projects/heavy/.terraform/terraform.tfstate aws_elb.heavy

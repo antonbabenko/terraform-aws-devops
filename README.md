@@ -31,9 +31,33 @@ Terraform remote state is configured using S3.
 1 region:
   - eu-west-1
 
+## Want to destroy? Tired of cycle errors?
+
+If you run `./terraform.sh heavy production plan-destroy` it will raise cycle error like:
+```
+Error running plan: 1 error(s) occurred:
+
+* Cycle: aws_security_group.elb, aws_security_group.elb (destroy), aws_iam_instance_profile.default (destroy), aws_iam_role.default (destroy), aws_iam_role.default, aws_iam_instance_profile.default, aws_security_group.web_server, aws_launch_configuration.heavy, aws_launch_configuration.heavy (destroy), aws_security_group.web_server (destroy), output.configuration, aws_elb.heavy (destroy), aws_autoscaling_group.heavy (destroy), terraform_remote_state.shared (destroy), terraform_remote_state.shared, aws_elb.heavy, aws_autoscaling_group.heavy
+```
+
+It happens because resource `terraform_remote_state.shared` does not have lifecycle event defined, so we should destroy all except it:
+
+```shell
+cd projects/heavy
+terraform destroy -var-file=production.tfvars -var-file=terraform.tfvars -var 'environment=production' \
+-target=aws_iam_instance_profile.default \
+-target=aws_elb.heavy \
+-target=aws_security_group.web_server \
+-target=template_file.heavy_user_data \
+-target=aws_iam_role.default \
+-target=aws_security_group.elb
+```
+
 ## Author
 
 Created and maintained by [Anton Babenko](https://github.com/antonbabenko).
+
+Feel free to open github issue, if you found something wrong or just have questions.
 
 ## License
 
