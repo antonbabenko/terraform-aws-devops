@@ -11,6 +11,8 @@ Talk was given by Anton Babenko on DevOps Norway Meetup 14th of December 2015.
 
 [Slides from the talk](http://www.slideshare.net/AntonBabenko/manage-aws-infrastructure-using-terraform-56140321)
 
+[Video recording](https://www.youtube.com/watch?v=rgzzkP2L1k8)
+
 ## Setup
 
 Install Terraform - https://www.terraform.io/intro/getting-started/install.html
@@ -20,9 +22,9 @@ Install AWS CLI - `brew update && brew install awscli` (on Mac)
 Get AWS IAM access and secret keys from AWS console and export them like this:
 
     export AWS_ACCESS_KEY_ID="something_here"
-	export AWS_SECRET_ACCESS_KEY="something_secret_here"
-	export TF_VAR_aws_access_key=$AWS_ACCESS_KEY_ID
-	export TF_VAR_aws_secret_key=$AWS_SECRET_ACCESS_KEY
+    export AWS_SECRET_ACCESS_KEY="something_secret_here"
+    export TF_VAR_aws_access_key=$AWS_ACCESS_KEY_ID
+    export TF_VAR_aws_secret_key=$AWS_SECRET_ACCESS_KEY
 		   
 ## Description
 
