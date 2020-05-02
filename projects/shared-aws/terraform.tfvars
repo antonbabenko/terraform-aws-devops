@@ -1,1 +1,0 @@
-name = "devops-shared-aws"

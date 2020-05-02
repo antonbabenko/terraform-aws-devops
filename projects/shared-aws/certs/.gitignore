@@ -1,5 +1,0 @@
-# Yes, certificates are allowed in this directory.
-# This is just a demo. What can possible go wrong ? :)
-!*.crt
-!*.key
-!*.csr
