@@ -23,9 +23,9 @@
 ## Utilities
 
 1. [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform) - keep Terraform and Terragrunt code in a good shape (validate, format, document and more).
+1. [terraform-cost-estimation](https://github.com/antonbabenko/terraform-cost-estimation) - anonymized, secure, and free Terraform cost estimation based on Terraform plan (0.12+) or Terraform state (any version).
 1. [terraform-docs-as-pdf](https://github.com/antonbabenko/terraform-docs-as-pdf) - for people who like PDFs or work offline.
 1. [awsp](https://github.com/antonbabenko/awsp) - AWS credential profile changer.
-1. [Make your terragrunt output useful](https://gist.github.com/antonbabenko/675049186e54b770b4789886d2056639) - shell alias which cut useless parts of Terragrunt output.
 
 
 ## Big projects
@@ -50,8 +50,9 @@ See also [terraform-best-practices-workshop repository](https://github.com/anton
 
 ## Small projects, code from my talks
 
+1. May 2020 - [Terragrunt Reference Architecture](https://github.com/antonbabenko/terragrunt-reference-architecture).
 1. February 2020 - [Code for the talk "Manage any AWS resource with Terraform"](https://github.com/antonbabenko/terraform-aws-anything).
-1. [terragrunt-reference-architecture](https://github.com/antonbabenko/terragrunt-reference-architecture)
+1. [Make your terragrunt output useful](https://gist.github.com/antonbabenko/675049186e54b770b4789886d2056639) - shell alias which cut useless parts of Terragrunt output.
 
 
 ## Abandoned and incomplete projects
