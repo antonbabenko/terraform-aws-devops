@@ -18,7 +18,7 @@
 1. [Open Collective](https://opencollective.com/modulestf)
 1. [Buy me a coffee](https://www.buymeacoffee.com/antonbabenko)
 1. [Paypal](https://www.paypal.me/antonbabenko)
-1. [Patreon](patreon.com/antonbabenko)
+1. [Patreon](https://patreon.com/antonbabenko)
 
 
 ## Utilities
