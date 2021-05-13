@@ -3,7 +3,7 @@
 ## Social links
 
 1. [Primary blog - antonbabenko.com](https://www.antonbabenko.com)
-1. [Blog - medium.com](https://medium.com/@anton.babenko)
+1. [Blog - medium.com](https://medium.com/@anton.babenko) - not very active
 1. [Company - betajob.com](https://www.betajob.com)
 1. [AWS Community Hero profile](https://aws.amazon.com/developer/community/heroes/anton-babenko/)
 1. [Github](https://github.com/antonbabenko)
@@ -19,6 +19,23 @@
 1. [Buy me a coffee](https://www.buymeacoffee.com/antonbabenko)
 1. [Paypal](https://www.paypal.me/antonbabenko)
 1. [Patreon](https://patreon.com/antonbabenko)
+
+
+## Media projects
+
+### [Your Weekly Dose of Terraform](https://www.youtube.com/channel/UCGH0yYPvlCN1VjSFMGVmFgQ)
+
+Weekly livestreams on YouTube with reviews, interviews, Q&A, live coding, and some hacking with Terraform.
+
+[![](http://img.youtube.com/vi/LXNWHg_qpQw/0.jpg)](http://www.youtube.com/watch?v=LXNWHg_qpQw "Your Weekly Dose Of Terraform")
+
+Playlists:
+1. [Terraform tools reviews](https://www.youtube.com/playlist?list=PLvz1V_9d3uivwNgADT_eB-wKEWOzOOQXy)
+1. [Terraform live coding](https://www.youtube.com/playlist?list=PLvz1V_9d3uis9mxZ8eATA6l9Sr1XLeY4Y)
+
+### [weekly.tf - Terraform Weekly newsletter](https://weekly.tf)
+
+Various news in the Terraform world (projects, announcements, discussions).
 
 
 ## Utilities
@@ -48,7 +65,7 @@ serverless.tf framework aims to provide information, solutions, and tools for bu
 
 ### [terraform-aws-modules](https://github.com/terraform-aws-modules)
 
-Open-source collection of 20+ Terraform AWS modules managed by the community. Check out [meta-configurations for terraform-aws-modules organization](https://github.com/terraform-aws-modules/meta).
+Open-source collection of 37+ Terraform AWS modules managed by the community. Check out [meta-configurations for terraform-aws-modules organization](https://github.com/terraform-aws-modules/meta).
 
 
 ### [terraform-best-practices.com](https://www.terraform-best-practices.com/) - Terraform best practices free ebook.
