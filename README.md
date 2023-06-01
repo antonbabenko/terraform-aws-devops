@@ -8,7 +8,7 @@
 1. [AWS Community Hero profile](https://aws.amazon.com/developer/community/heroes/anton-babenko/)
 1. [Github](https://github.com/antonbabenko)
 1. [Linkedin](https://www.linkedin.com/in/antonbabenko/)
-1. Twitter: [@antonbabenko](https://twitter.com/antonbabenko), [@weeklytf](https://twitter.com/weeklytf)
+1. Twitter: [@antonbabenko](https://twitter.com/antonbabenko), [@weeklytf](https://twitter.com/weeklytf), [@modulestf](https://twitter.com/modulestf)
 1. [Slideshare](http://www.slideshare.net/AntonBabenko) - many slide decks of my talks
 
 
@@ -29,7 +29,7 @@ Contact me, if you want to sponsor the development of the open-source projects o
 ### [Your Weekly Dose of Terraform](http://bit.ly/terraform-youtube)
 
 Weekly live streams on YouTube with reviews, interviews, Q&A, live coding, and some hacking with Terraform.
-Stats (June 2022): 5.6K+ subscribers.
+Stats (June 2023): 7.7K+ subscribers.
 
 [![youtube_cover](https://user-images.githubusercontent.com/393243/146941421-83802dc6-11da-4ec7-9739-d5c37869c2cc.png)](http://bit.ly/terraform-youtube "Your Weekly Dose Of Terraform")
 
@@ -39,7 +39,7 @@ Playlists:
 
 ### [weekly.tf - Terraform Weekly newsletter](https://weekly.tf)
 
-Weekly newsletter with updates from the Terraform world - blog posts, open-source projects, announcements, discussions. Stats (June 2022): 2.2K+ subscribers, 86 newsletters.
+Weekly newsletter with updates from the Terraform world - blog posts, open-source projects, announcements, discussions. Stats (June 2023): 5K+ subscribers, 124 newsletters.
 
 [Use Google](https://www.google.com/search?q=site%3Aweekly.tf) to search in the previous newsletters.
 
@@ -54,10 +54,9 @@ Weekly newsletter with updates from the Terraform world - blog posts, open-sourc
 
 ## Big projects
 
-### [Diagrams to code (d2c) - Infrastructure as code generator - from visual diagrams created with Cloudcraft.co to Terraform](https://github.com/antonbabenko/modules.tf-lambda)
+### [modules.tf](https://modules.tf) - Visual Studio Code extension for Terraform
 
-[Source and Terraform infrastructure configurations](https://github.com/antonbabenko/modules.tf-lambda) built using [serverless.tf framework](https://serverless.tf). [Sample code produced by D2C tool](https://github.com/antonbabenko/modules.tf-demo). Not available via **cloudcraft.co** for new accounts since June 2022.
-
+Boost developer productivity when working with Terraform — semantic highlighting, autocomplete, and diagnostics should be just a beginning.
 
 ### [serverless.tf](https://serverless.tf)
 
@@ -73,15 +72,26 @@ Open-source collection of more than 48 Terraform AWS modules managed by the comm
 
 ### [terraform-best-practices.com](https://www.terraform-best-practices.com/) - Terraform Best Practices (free ebook).
 
-Available in 8 languages:
+Available translations:
 * [English](https://www.terraform-best-practices.com/)
-* [Español (Spanish)](https://www.terraform-best-practices.com/v/es/) (translated by [Abel López](https://www.linkedin.com/in/abelopz))
-* [Bahasa Indonesia (Indonesian)](https://www.terraform-best-practices.com/v/id/) (translated by [Roy Inganta Ginting](https://www.linkedin.com/in/royinganta))
-* [Français (French)](https://www.terraform-best-practices.com/v/fr/) (translated by [Nicanor Foping](https://www.linkedin.com/in/nicanor-foping))
-* [Deutsch (German)](https://www.terraform-best-practices.com/v/de/) (translated by [Johannes Grumböck](https://www.linkedin.com/in/jgrumboe))
-* [Português (Brazilian Portuguese)](https://www.terraform-best-practices.com/v/ptbr/) (translated by [Lucas Possamai](https://www.linkedin.com/in/lucaspossamai))
-* [Polski (Polish)](https://www.terraform-best-practices.com/v/pl/) (translated by [Jakub Piotr Hamerliński](https://www.linkedin.com/in/hamerlinski))
-* [Українська (Ukrainian)](https://www.terraform-best-practices.com/v/uk/) (translated by [Oksana Lyhuta](https://www.linkedin.com/in/oksanalyguta))
+* [العربية (Arabic)](https://www.terraform-best-practices.com/v/ar/) by [Nidal Shater](https://www.linkedin.com/in/nidal-shater/)
+* [Bosanski (Bosnian)](https://www.terraform-best-practices.com/v/ba/) by [Dzenan Dzevlan](https://www.linkedin.com/in/sqlheisenberg/)
+* [Português (Brazilian Portuguese)](https://www.terraform-best-practices.com/v/ptbr/) by [Lucas Possamai](https://www.linkedin.com/in/lucaspossamai)
+* [Français (French)](https://www.terraform-best-practices.com/v/fr/) by [Nicanor Foping](https://www.linkedin.com/in/nicanor-foping)
+* [ქართული (Georgian)](https://www.terraform-best-practices.com/v/ka/) by [Jaba Macharashvili](https://www.linkedin.com/in/jaba0x/)
+* [Deutsch (German)](https://www.terraform-best-practices.com/v/de/) by [Johannes Grumböck](https://www.linkedin.com/in/jgrumboe)
+* [ελληνικά (Greek)](https://www.terraform-best-practices.com/v/el/) by [Pavlos Kaimakis](https://www.linkedin.com/in/pavlos-kaimakis/) and [Konstantinos Kourmousis](https://www.linkedin.com/in/kkourmousis/)
+* [עברית (Hebrew)](https://www.terraform-best-practices.com/v/he/) by [Zvi Blitsman](https://www.linkedin.com/in/zvi-b-4b20bb143/)
+* [िंदी (Hindi)](https://www.terraform-best-practices.com/v/hi/) by [Dipali Kulshrestha](https://www.linkedin.com/in/dipalik/)
+* [Bahasa Indonesia (Indonesian)](https://www.terraform-best-practices.com/v/id/) by [Roy Inganta Ginting](https://www.linkedin.com/in/royinganta)
+* [Italiano (Italian)](https://www.terraform-best-practices.com/v/it/) by [Giuseppe Borgese](https://www.linkedin.com/in/giuseppe-borgese-64181a7/)
+* [ಕನ್ನಡ (Kannada)](https://www.terraform-best-practices.com/v/kn/) by [Trivikrama Harikrishnan](https://www.linkedin.com/in/trivih/)
+* [Polski (Polish)](https://www.terraform-best-practices.com/v/pl/) by [Jakub Piotr Hamerliński](https://www.linkedin.com/in/hamerlinski)
+* [Română (Romanian)](https://www.terraform-best-practices.com/v/ro/) by [Andra Glavan](https://www.linkedin.com/in/andra-glavan-0003ab69/)
+* [简体中文 (Simplified Chinese)](https://www.terraform-best-practices.com/v/zh/) by [Yao Cheng](https://www.linkedin.com/in/yaocheng0517/)
+* [Español (Spanish)](https://www.terraform-best-practices.com/v/es/) by [Abel López](https://www.linkedin.com/in/abelopz)
+* [Türkçe (Turkish)](https://www.terraform-best-practices.com/v/tr/) by [Bilgehan Nal](https://www.linkedin.com/in/bilgehan-nal/)
+* [Українська (Ukrainian)](https://www.terraform-best-practices.com/v/uk/) by [Oksana Lyhuta](https://www.linkedin.com/in/oksanalyguta)
 
 See also [terraform-best-practices-workshop repository](https://github.com/antonbabenko/terraform-best-practices-workshop) for hands-on materials.
 
@@ -95,6 +105,7 @@ See also [terraform-best-practices-workshop repository](https://github.com/anton
 
 ## Abandoned and incomplete projects
 
+1. [Diagrams to code (d2c) - Infrastructure as code generator - from visual diagrams created with Cloudcraft.co to Terraform](https://github.com/antonbabenko/modules.tf-lambda) - [Source and Terraform infrastructure configurations](https://github.com/antonbabenko/modules.tf-lambda) built using [serverless.tf framework](https://serverless.tf). [Sample code produced by D2C tool](https://github.com/antonbabenko/modules.tf-demo). Not available via **cloudcraft.co** for new accounts since June 2022.
 1. [tfvars-annotations](https://github.com/antonbabenko/tfvars-annotations) - Update values in terraform.tfvars using annotations
 1. [terrapin](https://github.com/antonbabenko/terrapin) - Terraform module generator
 1. [terrible](https://github.com/antonbabenko/terrible) - Let's orchestrate Terraform configuration files with Ansible! Terrible idea! :)
