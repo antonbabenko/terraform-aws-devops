@@ -29,16 +29,17 @@ Contact me, if you want to sponsor the development of the open-source projects o
 
 ## Media projects
 
-### [Your Weekly Dose of Terraform](http://bit.ly/terraform-youtube)
+### [Your Weekly Dose of Terraform](https://www.youtube.com/AntonBabenkoLive)
 
 Weekly live streams on YouTube with reviews, interviews, Q&A, live coding, and some hacking with Terraform.
 Stats (April 2026): 10.2K+ subscribers.
 
-[![youtube_cover](https://user-images.githubusercontent.com/393243/146941421-83802dc6-11da-4ec7-9739-d5c37869c2cc.png)](http://bit.ly/terraform-youtube "Your Weekly Dose Of Terraform")
+[![youtube_cover](https://user-images.githubusercontent.com/393243/146941421-83802dc6-11da-4ec7-9739-d5c37869c2cc.png)](https://www.youtube.com/AntonBabenkoLive "Your Weekly Dose Of Terraform")
 
 Playlists:
 1. [Terraform tools reviews](https://www.youtube.com/playlist?list=PLvz1V_9d3uivwNgADT_eB-wKEWOzOOQXy)
 1. [Terraform live coding](https://www.youtube.com/playlist?list=PLvz1V_9d3uis9mxZ8eATA6l9Sr1XLeY4Y)
+1. [My Talks](https://www.youtube.com/playlist?list=PLvz1V_9d3uisERhsmZDSxXWx3ZwAdoEe7)
 
 ### [weekly.tf - Terraform Weekly newsletter](https://weekly.tf)
 
