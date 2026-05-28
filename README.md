@@ -3,6 +3,7 @@
 ## Social links
 
 1. [AWS Community Hero profile](https://builder.aws.com/community/@antonbabenko)
+1. [Sessionize speaker profile](https://sessionize.com/antonbabenko)
 1. [Company - betajob.com](https://www.betajob.com)
 1. [Github](https://github.com/antonbabenko)
 1. [Linkedin](https://www.linkedin.com/in/antonbabenko/)
@@ -11,7 +12,7 @@
 ---
 
 1. [Personal blog - antonbabenko.com](https://www.antonbabenko.com) - not very active
-1. [Blog - medium.com](https://medium.com/@anton.babenko) - not very active
+1. Blogs (not very active): [dev.to](https://dev.to/antonbabenko) and [medium.com](https://medium.com/@anton.babenko)
 1. [Slideshare](http://www.slideshare.net/AntonBabenko) - many slide decks of my talks
 
 ## Like what I do? There are several ways to support me!
@@ -32,7 +33,7 @@ Contact me, if you want to sponsor the development of the open-source projects o
 ### [Your Weekly Dose of Terraform](https://www.youtube.com/AntonBabenkoLive)
 
 Weekly live streams on YouTube with reviews, interviews, Q&A, live coding, and some hacking with Terraform.
-Stats (April 2026): 10.2K+ subscribers.
+Stats (May 2026): 10.2K+ subscribers.
 
 [![youtube_cover](https://user-images.githubusercontent.com/393243/146941421-83802dc6-11da-4ec7-9739-d5c37869c2cc.png)](https://www.youtube.com/AntonBabenkoLive "Your Weekly Dose Of Terraform")
 
@@ -43,17 +44,10 @@ Playlists:
 
 ### [weekly.tf - Terraform Weekly newsletter](https://weekly.tf)
 
-Weekly newsletter with updates from the Terraform world - blog posts, open-source projects, announcements, discussions. Stats (April 2026): 13K+ subscribers, 269 newsletters.
+Weekly newsletter with updates from the Terraform world - blog posts, open-source projects, announcements, discussions. Stats (May 2026): 13K+ subscribers, 275 newsletters.
 
 [Use Google](https://www.google.com/search?q=site%3Aweekly.tf) to search in the previous newsletters.
 
-
-## Utilities
-
-1. [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform) - pre-commit hooks for Terraform and Terragrunt: validate, format, document, run security checks, estimate costs, and more.
-1. [terraform-skill](https://github.com/antonbabenko/terraform-skill) - Claude Code skill for Terraform and OpenTofu best practices - testing, module design, CI/CD workflows, and production infrastructure.
-1. [terraform-cost-estimation](https://github.com/antonbabenko/terraform-cost-estimation) - anonymized, secure, and free Terraform cost estimation based on Terraform plan (0.12+) or Terraform state (any version). Also, available from the browser - [terraform-cost-estimation.com](https://terraform-cost-estimation.com)
-1. [awsp](https://github.com/antonbabenko/awsp) - AWS credential profile changer.
 
 ## Big projects
 
@@ -66,7 +60,7 @@ See also [awesome-terraform-compliance](https://github.com/antonbabenko/awesome-
 
 ### [terraform-aws-modules](https://github.com/terraform-aws-modules)
 
-60+ open-source Terraform modules for the most popular AWS services, maintained by the community. Over 1 billion downloads from the [Terraform Registry](https://registry.terraform.io/namespaces/terraform-aws-modules).
+60+ open-source Terraform modules for the most popular AWS services, maintained by the community. Over 2 billion downloads from the [Terraform Registry](https://registry.terraform.io/namespaces/terraform-aws-modules).
 
 
 ### [terraform-best-practices.com](https://www.terraform-best-practices.com/) - Terraform Best Practices (free ebook).
@@ -104,12 +98,27 @@ See also [terraform-best-practices-workshop repository](https://github.com/anton
 
 A framework for serverless applications with Terraform - tools, examples, and deployment patterns for AWS. Read more at [antonbabenko/serverless.tf](https://github.com/antonbabenko/serverless.tf).
 
+See also [repro-lambda](https://github.com/antonbabenko/repro-lambda) - a brand-new helper for building reproducible Lambda packages and integrate with Terraform.
+
+
+### [claude-delegator](https://github.com/antonbabenko/claude-delegator) - Claude Code plugin
+
+[claude-delegator](https://github.com/antonbabenko/claude-delegator) adds GPT, Gemini, and Grok as expert reviewers and ships `/consensus`, a 3-stage loop that makes the three models argue until they agree.
+
+
+## Utilities
+
+1. [agent-plugins](https://github.com/antonbabenko/agent-plugins) - A collection of agent plugins for improving productivity, automating workflows, and making AI coding agents work better together.
+1. [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform) - pre-commit hooks for Terraform and Terragrunt: validate, format, document, security checks, and cost estimates.
+1. [terraform-skill](https://github.com/antonbabenko/terraform-skill) - Claude Code skill for Terraform and OpenTofu best practices - testing, module design, CI/CD workflows, and production infrastructure.
+1. [terraform-cost-estimation](https://github.com/antonbabenko/terraform-cost-estimation) - anonymized, secure, and free Terraform cost estimation based on Terraform plan (0.12+) or Terraform state (any version). Also available in the browser - [terraform-cost-estimation.com](https://terraform-cost-estimation.com)
+1. [awsp](https://github.com/antonbabenko/awsp) - AWS credential profile changer.
+
 
 ## Small projects, code from my talks
 
 1. May 2020 - [Terragrunt Reference Architecture](https://github.com/antonbabenko/terragrunt-reference-architecture).
 1. February 2020 - [Code for the talk "Manage any AWS resource with Terraform"](https://github.com/antonbabenko/terraform-aws-anything).
-1. [Make your terragrunt output useful](https://gist.github.com/antonbabenko/675049186e54b770b4789886d2056639) - shell alias which cut useless parts of Terragrunt output.
 
 
 ## Abandoned and incomplete projects
