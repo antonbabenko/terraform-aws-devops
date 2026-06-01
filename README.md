@@ -101,9 +101,9 @@ A framework for serverless applications with Terraform - tools, examples, and de
 See also [repro-lambda](https://github.com/antonbabenko/repro-lambda) - a brand-new helper for building reproducible Lambda packages and integrate with Terraform.
 
 
-### [claude-delegator](https://github.com/antonbabenko/claude-delegator) - Claude Code plugin
+### [deliberation](https://github.com/antonbabenko/deliberation) - A second opinion from other AI models
 
-[claude-delegator](https://github.com/antonbabenko/claude-delegator) adds GPT, Gemini, and Grok as expert reviewers and ships `/consensus`, a 3-stage loop that makes the three models argue until they agree.
+[deliberation](https://github.com/antonbabenko/deliberation) lets your AI coding agent ask GPT, Gemini, Grok, and 300+ models on OpenRouter for help. Seven experts - Architect, Code Reviewer, Security Analyst, and more - review your plans, find bugs, and debate edge cases. The `/consensus` command makes them argue until they agree. Works in Claude Code, Cursor, Codex CLI, Kiro, OpenCode, and any MCP tool.
 
 
 ## Utilities
