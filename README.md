@@ -1,5 +1,7 @@
 # Various links to most of my Terraform, AWS, and DevOps projects
 
+[Personal blog - antonbabenko.com](https://www.antonbabenko.com) - very active, new posts regularly
+
 ## Social links
 
 1. [AWS Community Hero profile](https://builder.aws.com/community/@antonbabenko)
@@ -11,7 +13,6 @@
 
 ---
 
-1. [Personal blog - antonbabenko.com](https://www.antonbabenko.com) - not very active
 1. Blogs (not very active): [dev.to](https://dev.to/antonbabenko) and [medium.com](https://medium.com/@anton.babenko)
 1. [Slideshare](http://www.slideshare.net/AntonBabenko) - many slide decks of my talks
 
@@ -105,6 +106,10 @@ See also [repro-lambda](https://github.com/antonbabenko/repro-lambda) - a brand-
 
 [deliberation](https://github.com/antonbabenko/deliberation) lets your AI coding agent ask GPT, Gemini, Grok, and 300+ models on OpenRouter for help. Seven experts - Architect, Code Reviewer, Security Analyst, and more - review your plans, find bugs, and debate edge cases. The `/consensus` command makes them argue until they agree. Works in Claude Code, Cursor, Codex CLI, Kiro, OpenCode, and any MCP tool.
 
+### [modules.tf](https://modules.tf) - Review Terraform module pull requests against written rules
+
+[modulestf](https://github.com/modulestf/modulestf) is a set of agent skills for Claude Code and Codex that review Terraform module pull requests against the [terraform-aws-modules](https://github.com/terraform-aws-modules) rules and list every rule they could not check. They also help make the change a review asks for. [mtf-facts](https://github.com/modulestf/facts) is the offline Go CLI underneath: it parses module trees and reports deterministic facts (lint results, interface and schema diffs), so the reviewer skips the rules a parser can decide.
+
 
 ## Utilities
 
@@ -123,8 +128,8 @@ See also [repro-lambda](https://github.com/antonbabenko/repro-lambda) - a brand-
 
 ## Abandoned and incomplete projects
 
-1. [modules.tf](https://modules.tf) - Visual Studio Code extension for Terraform. Development paused; not actively maintained.
-1. [Diagrams to code (d2c) - Infrastructure as code generator - from visual diagrams created with Cloudcraft.co to Terraform](https://github.com/antonbabenko/modules.tf-lambda) - built using [serverless.tf framework](https://serverless.tf).
+1. Visual Studio Code extension for Terraform. Development paused; not actively maintained.
+1. [Diagrams to code (d2c) - Infrastructure as code generator - from visual diagrams created with Cloudcraft.co to Terraform](https://github.com/modulestf/modulestf/tree/legacy) - built using [serverless.tf framework](https://serverless.tf).
 1. [tfvars-annotations](https://github.com/antonbabenko/tfvars-annotations) - Update values in terraform.tfvars using annotations
 1. [terrapin](https://github.com/antonbabenko/terrapin) - Terraform module generator
 1. [terrible](https://github.com/antonbabenko/terrible) - Let's orchestrate Terraform configuration files with Ansible! Terrible idea! :)
